@@ -1,0 +1,31 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 17
+    buildToolsVersion "23.0.1"
+
+    defaultConfig {
+        applicationId "com.olami.weatherdemo"
+        minSdkVersion 14
+        targetSdkVersion 21
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs =['libs']
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+}
+
+dependencies {
+    compile 'com.google.code.gson:gson:2.2.4'
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+
+}

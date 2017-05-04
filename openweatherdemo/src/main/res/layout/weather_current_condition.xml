@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.sample.weatherdemo.ui.view.WeatherCurView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:weather="http://schemas.android.com/apk/res-auto"
+    style="@style/WeatherModule">
+
+    <ImageView
+        android:id="@+id/main_icon"
+        android:layout_width="@dimen/current_condition_icon_size"
+        android:layout_height="@dimen/current_condition_icon_size"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="@dimen/current_condition_icon_margin_bottom"
+        android:layout_marginLeft="2.0dip"
+        android:layout_marginRight="@dimen/current_condition_icon_right_margin"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_default_big" />
+
+    <com.sample.weatherdemo.ui.view.WeatherTypefacedTextView
+        android:id="@+id/weather_description"
+        style="@style/Label.Shadow"
+        android:layout_alignBottom="@id/main_icon"
+        android:layout_alignTop="@id/main_icon"
+        android:layout_marginLeft="4.0dip"
+        android:layout_toRightOf="@id/main_icon"
+        android:gravity="center"
+        android:paddingBottom="0.0dip"
+        android:text="&#45;&#45;"
+        weather:typeface="fonts/Roboto-Light.ttf" />
+
+    <ImageView
+        android:id="@+id/temp_high_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/main_icon"
+        android:layout_marginLeft="@dimen/temp_high_icon_margin_left"
+        android:layout_marginTop="@dimen/current_condition_icon_margin_bottom"
+        android:paddingBottom="@dimen/temp_high_icon_padding_bottom"
+        android:src="@drawable/temp_high" />
+
+    <com.sample.weatherdemo.ui.view.WeatherTypefacedTextView
+        android:id="@+id/temp_high"
+        style="@style/Label.Shadow"
+        android:layout_alignLeft="@id/weather_description"
+        android:layout_below="@id/main_icon"
+        android:layout_marginRight="30.0dip"
+        android:layout_toRightOf="@id/temp_high_icon"
+        android:text="&#45;&#45;°"
+        weather:typeface="fonts/Roboto-Light.ttf" />
+
+    <ImageView
+        android:id="@+id/temp_low_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/main_icon"
+        android:layout_marginRight="@dimen/temp_icon_padding"
+        android:layout_toRightOf="@id/temp_high"
+        android:paddingBottom="@dimen/temp_high_icon_padding_bottom"
+        android:src="@drawable/temp_low" />
+
+    <com.sample.weatherdemo.ui.view.WeatherTypefacedTextView
+        android:id="@+id/temp_low"
+        style="@style/Label.Shadow"
+        android:layout_below="@id/main_icon"
+        android:layout_toRightOf="@id/temp_low_icon"
+        android:text="&#45;&#45;°"
+        weather:typeface="fonts/Roboto-Light.ttf" />
+
+
+    <com.sample.weatherdemo.ui.view.WeatherTypefacedTextView
+        android:id="@+id/temperature"
+        style="@style/Label.Shadow.ExtraLarge"
+        android:layout_below="@id/temp_high_icon"
+        android:layout_marginTop="-20dp"
+        android:text="22"
+        weather:typeface="fonts/Roboto-Thin.ttf" />
+
+    <ImageView
+        android:id="@+id/degree_icon"
+        android:layout_width="@dimen/degree_icon_size"
+        android:layout_height="@dimen/degree_icon_size"
+        android:layout_alignTop="@id/temperature"
+        android:layout_marginBottom="10.0dip"
+        android:layout_marginLeft="5.0dip"
+        android:layout_marginRight="14.0dip"
+        android:layout_marginTop="40.0dip"
+        android:layout_toRightOf="@id/temperature"
+        android:src="@drawable/big_temp_degree" />
+
+    <ImageView
+        android:id="@+id/flickr_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/temperature"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="@dimen/margin_md"
+        android:layout_marginLeft="2.0dip"
+        android:layout_marginRight="3.0dip"
+        android:contentDescription="@string/speak_launch_project_weather"
+        android:paddingBottom="@dimen/flickr_icon_padding_bottom"
+        android:src="@drawable/flickr"
+        android:visibility="invisible" />
+
+    <com.sample.weatherdemo.ui.view.WeatherTypefacedTextView
+        android:id="@+id/copyright"
+        style="@style/Label.Shadow.Small"
+        android:layout_alignBottom="@id/flickr_icon"
+        android:layout_marginBottom="-2.0dip"
+        android:layout_toLeftOf="@id/flickr_icon"
+        android:ellipsize="middle"
+        android:gravity="center"
+        android:maxWidth="120.0dip"
+        android:paddingBottom="0.0dip"
+        android:text="未发布"
+        weather:typeface="fonts/Roboto-Regular.ttf" />
+    android:textColor="#ffdcdcdc"
+
+    <ImageView
+        android:id="@+id/copyright_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/flickr_icon"
+        android:layout_marginBottom="-1.0dip"
+        android:layout_marginRight="1.0dip"
+        android:layout_toLeftOf="@id/copyright"
+        android:paddingBottom="@dimen/flickr_icon_padding_bottom"
+        android:src="@drawable/copywrite"
+        android:visibility="invisible" />
+</com.sample.weatherdemo.ui.view.WeatherCurView>
