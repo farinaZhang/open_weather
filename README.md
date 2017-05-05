@@ -1,7 +1,14 @@
 # open_weather
 一个简单的 应用 olami 开放平台及sdk 的天气应用。可以语音切换城市，查询空气质量，未来天气等
 
+![](https://github.com/farinaZhang/open_weather/blob/master/device-2017-05-05-135239.mp4)
 
+
+![](https://github.com/farinaZhang/open_weather/blob/master/app_review/device-2017-05-05-140347.png)
+![](https://github.com/farinaZhang/open_weather/blob/master/app_review/device-2017-05-05-140414.png)
+![](https://github.com/farinaZhang/open_weather/blob/master/app_review/device-2017-05-05-140436.png)
+![](https://github.com/farinaZhang/open_weather/blob/master/app_review/device-2017-05-05-140506.png)
+![](https://github.com/farinaZhang/open_weather/blob/master/app_review/device-2017-05-05-140308.png)
 
 demo 简介：
 
