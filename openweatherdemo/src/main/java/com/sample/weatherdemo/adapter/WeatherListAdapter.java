@@ -118,6 +118,8 @@ public class WeatherListAdapter extends BaseAdapter {
 			itemType = AQI_TYPE;
 		}else if(ShowType == 2){
 			itemType = FORECAST_TYPE;
+		}else if(ShowType == 4){
+			itemType = INDEX_TYPE;
 		}
 		if (convertView == null
 				|| !convertView.getTag().equals(

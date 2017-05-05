@@ -5,7 +5,7 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
 
-    <string name="tip_text">你可以试着问天气相关\n如:上海的天气\n北京的天气\n空气质量</string>
+    <string name="tip_text">你可以试着问天气相关\n如:上海的天气\n今天的天气\n一周的天气\n空气质量\n穿衣指数</string>
 
 
     <string name="press_again_exit">再按一次退出</string>

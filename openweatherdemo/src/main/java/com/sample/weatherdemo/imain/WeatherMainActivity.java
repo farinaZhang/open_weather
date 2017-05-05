@@ -53,6 +53,7 @@ public class WeatherMainActivity extends Activity implements ITaskManager {
     private WeatherListAdapter mWeatherAdapter;
     private FrameLayout mCurWeatherView;
 
+    private TextView mInput;
     // 当前天气的View
     private ImageView mCurWeatherIV;
     private TextView mCurWeatherTV;
@@ -63,9 +64,10 @@ public class WeatherMainActivity extends Activity implements ITaskManager {
 
     private Button mBtnStart;  //开始录音按键，完成录音自动发送给服务器（网络）获取数据；
     private String postID = "101020100";
-    private String CityName = "上海";
+    private final String DEFAULT_CITY="上海";
+    private String CityName = DEFAULT_CITY;
     private ContentResolver mContentResolver;
-    private int ShowType = 0;//0:全部天气数据； 1:空气质量 ,2: 一周天气,3:今天
+    private int ShowType = 0;//0:全部天气数据； 1:空气质量 ,2: 一周天气,3:今天 ,4: 天气指数
 
 
     @Override
@@ -90,6 +92,7 @@ public class WeatherMainActivity extends Activity implements ITaskManager {
     }
 
     private void initView() {
+        mInput = (TextView)findViewById(R.id.input_text);
         mBtnStart = (Button) findViewById(R.id.btn_start);
 
         mBackImage = (ImageView) findViewById(R.id.weather_background);
@@ -132,7 +135,7 @@ public class WeatherMainActivity extends Activity implements ITaskManager {
             public void handleMessage(Message msg) {
                 switch (msg.what) {
                     case MessageConst.CLENT_SHOW_ERROR: {
-                        T.showShort(WeatherMainActivity.this, "刷新失败...");
+                        T.showShort(WeatherMainActivity.this, "刷新失败...请再试一次");
                         break;
                     }
                 }
@@ -154,12 +157,16 @@ public class WeatherMainActivity extends Activity implements ITaskManager {
                         mBtnStart.setText("开始");
                         break;
 
+                    case MessageConst.CLENT_SHOW_INPUT:{
+                        mInput.setText((String)msg.obj);
+                        break;
+                    }
                     case MessageConst.SERVER_ACTION_RETURN_RESULT: {
                         if(msg.arg1 == 0){
                             String temp = (String)msg.obj;
                             if(temp.equals("今天")){
                                 ShowType = 3;
-                            }else if(temp.equals("明天")||temp.equals("后天")){
+                            }else if(temp.equals("明天")||temp.equals("后天")||temp.equals("一周")){
                                 ShowType = 2;
                             }else{
                                 ShowType = msg.arg1;
@@ -185,6 +192,7 @@ public class WeatherMainActivity extends Activity implements ITaskManager {
                             new WeatherTask(postID).execute(true);
                         } else {
                             T.showShort(WeatherMainActivity.this, "城市不存在，刷新失败...");
+                            CityName =DEFAULT_CITY; //当城市名不存在时，还原城市名，默认上海
                         }
 
                         break;

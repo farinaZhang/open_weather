@@ -16,6 +16,14 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+        <TextView android:id="@+id/input_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="false"
+            style="@style/Label"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"/>
         <RelativeLayout
             android:id="@+id/container"
             android:layout_width="match_parent"
@@ -39,7 +47,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/margin_sm"
-                    android:layout_marginRight="@dimen/margin_sm">
+                    android:layout_marginRight="@dimen/margin_sm"
+                    android:visibility="gone">
                     <include
                         layout="@layout/weather_current_condition"
                         android:background="@android:color/transparent"

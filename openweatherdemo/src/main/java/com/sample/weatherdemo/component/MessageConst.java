@@ -11,6 +11,7 @@ public class MessageConst {
     public static final int CLENT_END_SPEECH_RECORDING = 10004;
     public static final int CLENT_START_SPEECH_RECORDING=10005;
     public static final int CLENT_SHOW_ERROR = 10006;
+    public static final int CLENT_SHOW_INPUT = 10007;
 
     
     public static final int SERVER_ACTION_RETURN_RESULT = 20000;

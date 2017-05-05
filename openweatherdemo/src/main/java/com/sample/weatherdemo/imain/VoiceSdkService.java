@@ -191,12 +191,16 @@ public class VoiceSdkService extends Service {
             if (jTemp.getString("status").equals("ok")) {
                 //服务器返回结果正确
                 jDatanli = jTemp.getJSONObject("data").getJSONArray("nli");
+                //{"desc_obj":{"status":0},"semantic":[{"app":"sample","input":"上海的天气","slots":[{"name":"city","value":"上海"}],"modifier":["chacitytianqi"],"customer":"58df54a484ae11f0bb7b488b"}],"type":"sample"}
 
                 JSONObject jDesObj = jDatanli.getJSONObject(0).getJSONObject("desc_obj");
                 if (jDesObj.getInt("status") == 0 && jDatanli.getJSONObject(0).has("semantic")) {
 
                     jDataSemantic = jDatanli.getJSONObject(0).getJSONArray("semantic");
                     //"slots":[{"name":"city","value":"上海"}],"modifier":["chacitytianqi"]
+
+                    String stringInput = jDataSemantic.getJSONObject(0).getString("input");
+                    sendMessageToActivity(MessageConst.CLENT_SHOW_INPUT, 0, 0, null, stringInput); //全部
 
                     jDataModifier = jDataSemantic.getJSONObject(0).getJSONArray("modifier").getString(0);
 
@@ -256,7 +260,11 @@ public class VoiceSdkService extends Service {
                         } else {
                             sendMessageToActivity(MessageConst.SERVER_ACTION_RETURN_RESULT, 1, 0, null, null); //空气质量
                         }
-                    } else {
+                    } else if(jDataModifier.equals("kqzhishu")){//指数
+
+                        sendMessageToActivity(MessageConst.SERVER_ACTION_RETURN_RESULT, 4, 0, null, null); //天气指数
+
+                    }else {
                         //不是天气相关
                         T.showShort(VoiceSdkService.this, "您所说的暂不支持，请换个说法");
                     }
