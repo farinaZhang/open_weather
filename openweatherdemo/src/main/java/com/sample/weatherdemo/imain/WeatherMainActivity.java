@@ -65,8 +65,8 @@ public class WeatherMainActivity extends Activity implements ITaskManager {
     private String postID = "101020100";
     private String CityName = "上海";
     private ContentResolver mContentResolver;
-    private int ShowType = 0;//0:全部天气数据； 1:空气质量 ,2: 一周天气,3:一天（今天，明天，后天）
-    private int riqiType = 0; //1:今天， 2：明天， 3：后天。
+    private int ShowType = 0;//0:全部天气数据； 1:空气质量 ,2: 一周天气,3:今天
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -155,12 +155,25 @@ public class WeatherMainActivity extends Activity implements ITaskManager {
                         break;
 
                     case MessageConst.SERVER_ACTION_RETURN_RESULT: {
-                        ShowType = msg.arg1;
-                        if(3 == ShowType) {
-                            riqiType = msg.arg2;
+                        if(msg.arg1 == 0){
+                            String temp = (String)msg.obj;
+                            if(temp.equals("今天")){
+                                ShowType = 3;
+                            }else if(temp.equals("明天")||temp.equals("后天")){
+                                ShowType = 2;
+                            }else{
+                                ShowType = msg.arg1;
+                                if(msg.obj != null) {
+                                    CityName = (String) msg.obj;
+                                }
+                            }
+                        }else {
+                            ShowType = msg.arg1;
+                            if(msg.obj != null) {
+                                CityName = (String) msg.obj;
+                            }
                         }
 
-                        CityName = (String) msg.obj;
 
                         Log.d("TAG", "SERVER_ACTION_RETURN_RESULT name : " + CityName);
                         mContentResolver = WeatherMainActivity.this.getContentResolver();

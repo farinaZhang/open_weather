@@ -37,13 +37,13 @@
                 <FrameLayout
                     android:id="@+id/current"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_sm"
+                    android:layout_marginRight="@dimen/margin_sm">
                     <include
                         layout="@layout/weather_current_condition"
                         android:background="@android:color/transparent"
-                        android:paddingLeft="@dimen/margin_sm"
-                        android:paddingRight="@dimen/margin_sm" />
-
+                         />
                 </FrameLayout>
 
                 <ListView

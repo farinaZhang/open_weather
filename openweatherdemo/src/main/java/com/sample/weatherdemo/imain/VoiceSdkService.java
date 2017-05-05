@@ -231,19 +231,15 @@ public class VoiceSdkService extends Service {
 
                             if(riqi.equals("今天")){
                                 temp=1;
-                            }else if(riqi.equals("明天")){
-                                temp=2;
-                            }else if(riqi.equals("后天")){
-                                temp=3;
                             }
 
                             if( 0 == temp){
-                                sendMessageToActivity(MessageConst.SERVER_ACTION_RETURN_RESULT, 2, 0, null, city);
+                                sendMessageToActivity(MessageConst.SERVER_ACTION_RETURN_RESULT, 2, 0, null, city); //一周
                             }else {
-                                sendMessageToActivity(MessageConst.SERVER_ACTION_RETURN_RESULT, 3, temp, null, city);
+                                sendMessageToActivity(MessageConst.SERVER_ACTION_RETURN_RESULT, 3, 0, null, city);// 今天
                             }
                         }else{
-                            sendMessageToActivity(MessageConst.SERVER_ACTION_RETURN_RESULT, 0, type, null, city);
+                            sendMessageToActivity(MessageConst.SERVER_ACTION_RETURN_RESULT, 0, type, null, city); //全部
                         }
 
                     } else if (jDataModifier.equals("kqzhiliang")) {//空气质量
@@ -258,7 +254,7 @@ public class VoiceSdkService extends Service {
                             // 根据城市名从数据库中获取城市Id
                             sendMessageToActivity(MessageConst.SERVER_ACTION_RETURN_RESULT, 1, 0, null, value);
                         } else {
-                            sendMessageToActivity(MessageConst.SERVER_ACTION_RETURN_RESULT, 1, 0, null, null);
+                            sendMessageToActivity(MessageConst.SERVER_ACTION_RETURN_RESULT, 1, 0, null, null); //空气质量
                         }
                     } else {
                         //不是天气相关
