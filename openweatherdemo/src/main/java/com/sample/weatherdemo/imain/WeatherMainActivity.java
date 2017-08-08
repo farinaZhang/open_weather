@@ -64,7 +64,7 @@ public class WeatherMainActivity extends Activity implements ITaskManager {
 
     private Button mBtnStart;  //开始录音按键，完成录音自动发送给服务器（网络）获取数据；
     private String postID = "101020100";
-    private final String DEFAULT_CITY="上海";
+    private final String DEFAULT_CITY = "上海";
     private String CityName = DEFAULT_CITY;
     private ContentResolver mContentResolver;
     private int ShowType = 0;//0:全部天气数据； 1:空气质量 ,2: 一周天气,3:今天 ,4: 天气指数
@@ -92,14 +92,14 @@ public class WeatherMainActivity extends Activity implements ITaskManager {
     }
 
     private void initView() {
-        mInput = (TextView)findViewById(R.id.input_text);
+        mInput = (TextView) findViewById(R.id.input_text);
         mBtnStart = (Button) findViewById(R.id.btn_start);
 
         mBackImage = (ImageView) findViewById(R.id.weather_background);
 
         mTipView = (TipView) findViewById(R.id.tip_view);
         mListView = (ListView) findViewById(R.id.drag_list);
-        mCurWeatherView = (FrameLayout)findViewById(R.id.current);
+        mCurWeatherView = (FrameLayout) findViewById(R.id.current);
         initCurWearther();
 
         mTipView.setVisibility(View.VISIBLE);
@@ -120,7 +120,7 @@ public class WeatherMainActivity extends Activity implements ITaskManager {
 
     }
 
-    private void initCurWearther(){
+    private void initCurWearther() {
         mCurWeatherIV = (ImageView) mCurWeatherView.findViewById(R.id.main_icon);
         mCurWeatherTV = (TextView) mCurWeatherView.findViewById(R.id.weather_description);
         mCurHighTempTV = (TextView) mCurWeatherView.findViewById(R.id.temp_high);
@@ -128,6 +128,7 @@ public class WeatherMainActivity extends Activity implements ITaskManager {
         mCurFeelsTempTV = (TextView) mCurWeatherView.findViewById(R.id.temperature);
         mCurWeatherCopyTV = (TextView) mCurWeatherView.findViewById(R.id.copyright);
     }
+
     //activity 的普通handler
     private void initHandler() {
         mHandler = new Handler() {
@@ -157,30 +158,29 @@ public class WeatherMainActivity extends Activity implements ITaskManager {
                         mBtnStart.setText("开始");
                         break;
 
-                    case MessageConst.CLENT_SHOW_INPUT:{
-                        mInput.setText((String)msg.obj);
+                    case MessageConst.CLENT_SHOW_INPUT: {
+                        mInput.setText((String) msg.obj);
                         break;
                     }
                     case MessageConst.SERVER_ACTION_RETURN_RESULT: {
-                        if(msg.arg1 == 0){
-                            String temp = (String)msg.obj;
-                            if(temp.equals("今天")){
+                        if (msg.arg1 == 0) {
+                            String temp = (String) msg.obj;
+                            if (temp.equals("今天")) {
                                 ShowType = 3;
-                            }else if(temp.equals("明天")||temp.equals("后天")||temp.equals("一周")){
+                            } else if (temp.equals("明天") || temp.equals("后天") || temp.equals("一周")) {
                                 ShowType = 2;
-                            }else{
+                            } else {
                                 ShowType = msg.arg1;
-                                if(msg.obj != null) {
+                                if (msg.obj != null) {
                                     CityName = (String) msg.obj;
                                 }
                             }
-                        }else {
+                        } else {
                             ShowType = msg.arg1;
-                            if(msg.obj != null) {
+                            if (msg.obj != null) {
                                 CityName = (String) msg.obj;
                             }
                         }
-
 
                         Log.d("TAG", "SERVER_ACTION_RETURN_RESULT name : " + CityName);
                         mContentResolver = WeatherMainActivity.this.getContentResolver();
@@ -192,7 +192,7 @@ public class WeatherMainActivity extends Activity implements ITaskManager {
                             new WeatherTask(postID).execute(true);
                         } else {
                             T.showShort(WeatherMainActivity.this, "城市不存在，刷新失败...");
-                            CityName =DEFAULT_CITY; //当城市名不存在时，还原城市名，默认上海
+                            CityName = DEFAULT_CITY; //当城市名不存在时，还原城市名，默认上海
                         }
 
                         break;
@@ -242,9 +242,6 @@ public class WeatherMainActivity extends Activity implements ITaskManager {
 
     }
 
-
-
-
     class WeatherTask extends WorkTask<Boolean, Void, WeatherInfo> {
         public WeatherTask(String postID) {
             super(postID, WeatherMainActivity.this);
@@ -279,7 +276,7 @@ public class WeatherMainActivity extends Activity implements ITaskManager {
             if (result == null) {
                 mHandler.sendEmptyMessage(MessageConst.CLENT_SHOW_ERROR);
             } else {
-                if(3 == ShowType){
+                if (3 == ShowType) {
                     mTipView.setVisibility(View.GONE);
                     mListView.setVisibility(View.GONE);
                     mCurWeatherView.setVisibility(View.VISIBLE);
@@ -297,7 +294,7 @@ public class WeatherMainActivity extends Activity implements ITaskManager {
                     mCurWeatherCopyTV.setText(TimeUtils.getDay(getPubTime(
                             getPostID(CityName))) + "发布");
 
-                }else {
+                } else {
                     mTipView.setVisibility(View.GONE);
                     mListView.setVisibility(View.VISIBLE);
                     mCurWeatherView.setVisibility(View.GONE);
@@ -324,8 +321,8 @@ public class WeatherMainActivity extends Activity implements ITaskManager {
 
     private long getPubTime(String postID) {
         Cursor c = mContentResolver.query(CityProvider.TMPCITY_CONTENT_URI,
-                new String[] { CityConstants.PUB_TIME }, CityConstants.POST_ID
-                        + "=?", new String[] { postID }, null);
+                new String[]{CityConstants.PUB_TIME}, CityConstants.POST_ID
+                        + "=?", new String[]{postID}, null);
 
         long time = 0L;
         if (c.moveToFirst())
@@ -333,8 +330,8 @@ public class WeatherMainActivity extends Activity implements ITaskManager {
         return time;
     }
 
-    private String getPostID(String name){
-        String postIDtemp ="";
+    private String getPostID(String name) {
+        String postIDtemp = "";
         mContentResolver = WeatherMainActivity.this.getContentResolver();
         Cursor c = mContentResolver.query(CityProvider.CITY_CONTENT_URI,
                 new String[]{CityProvider.CityConstants.POST_ID}, CityProvider.CityConstants.NAME
@@ -344,7 +341,6 @@ public class WeatherMainActivity extends Activity implements ITaskManager {
         }
         return postIDtemp;
     }
-
 
 
     protected void taskStateChanged(ABaseTaskState state, Serializable tag) {

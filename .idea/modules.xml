@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/openweatherdemo/olamiweatherdemo.iml" filepath="$PROJECT_DIR$/openweatherdemo/olamiweatherdemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/open_weather.iml" filepath="$PROJECT_DIR$/open_weather.iml" />
+      <module fileurl="file://$PROJECT_DIR$/openweatherdemo/openweatherdemo.iml" filepath="$PROJECT_DIR$/openweatherdemo/openweatherdemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/voicesdk/voicesdk.iml" filepath="$PROJECT_DIR$/voicesdk/voicesdk.iml" />
+    </modules>
+  </component>
+</project>

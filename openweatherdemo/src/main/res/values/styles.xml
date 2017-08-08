@@ -45,12 +45,12 @@
     </style>
 
     <style name="Label">
-        <item name="android:textSize">@dimen/text_lg</item>
-        <item name="android:textColor">@android:color/white</item>
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:singleLine">true</item>
-    </style>
+    <item name="android:textSize">@dimen/text_lg</item>
+    <item name="android:textColor">@android:color/white</item>
+    <item name="android:layout_width">wrap_content</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:singleLine">true</item>
+</style>
 
     <style name="Label.Shadow" parent="@style/Label">
         <item name="android:shadowColor">#88000000</item>

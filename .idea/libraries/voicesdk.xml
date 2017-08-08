@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="voicesdk">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/openweatherdemo/libs/voicesdk.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

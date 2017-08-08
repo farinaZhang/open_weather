@@ -56,10 +56,10 @@ public class VoiceSdkService extends Service {
         mViaVoiceRecognizer = new OlamiVoiceRecognizer(VoiceSdkService.this);
         TelephonyManager telephonyManager = (TelephonyManager) this.getSystemService(this.getBaseContext().TELEPHONY_SERVICE);
         String imei = telephonyManager.getDeviceId();
-        mViaVoiceRecognizer.init(imei);
+        mViaVoiceRecognizer.init(imei); //设置用户号，用于区分用户，一般设置为iemi号
 
-        mViaVoiceRecognizer.setListener(mViaVoiceRecognizerListener);
-        mViaVoiceRecognizer.setLocalization(OlamiVoiceRecognizer.LANGUAGE_SIMPLIFIED_CHINESE);
+        mViaVoiceRecognizer.setListener(mViaVoiceRecognizerListener); //设置语音设备listener，监听语音识别开始，结束，结果，及各种出错。
+        mViaVoiceRecognizer.setLocalization(OlamiVoiceRecognizer.LANGUAGE_SIMPLIFIED_CHINESE);// 设置返回结果语言类型，目前支持简体和繁体
         mViaVoiceRecognizer.setAuthorization("0fabfbd3db2546a0b48628a4354801f8", "asr", "0a714958eef844869175f9507a074c17", "nli");
         mViaVoiceRecognizer.setVADTailTimeout(3000);
 

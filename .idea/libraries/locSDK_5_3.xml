@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="locSDK_5.3">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/openweatherdemo/libs/locSDK_5.3.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

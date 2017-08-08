@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="E:\AndroidStudioProjects\open_weather\openweatherdemo\libs\android-support-v13.jar"
+        jumboMode="true"
+        revision="23.0.1"
+        sha1="fafc4ec09b2d11e45368d6dcd23e788e153a8afa">
+        <dex dex="E:\AndroidStudioProjects\open_weather\openweatherdemo\build\intermediates\transforms\dex\debug\folders\1000\2\android-support-v13_e6ce25d541a234c330af17ceb30a4d842e0331ee\classes.dex" />
+    </item>
+    <item
+        jar="D:\AndroidStudio\Android\Studio\gradle\m2repository\com\google\code\gson\gson\2.2.4\gson-2.2.4.jar"
+        jumboMode="true"
+        revision="23.0.1"
+        sha1="a60a5e993c98c864010053cb901b7eab25306568">
+        <dex dex="E:\AndroidStudioProjects\open_weather\openweatherdemo\build\intermediates\transforms\dex\debug\folders\1000\10\gson-2.2.4_8899407cbe5a45d2ab346320f8c3c26de33fd35f\classes.dex" />
+    </item>
+    <item
+        jar="E:\AndroidStudioProjects\open_weather\openweatherdemo\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="23.0.1"
+        sha1="761c1f7458f80c39fa92c82ce72a211aba522445">
+        <dex dex="E:\AndroidStudioProjects\open_weather\openweatherdemo\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_c8baea41b6fd858f9ab7f69d448f489075c5a6a7\classes.dex" />
+    </item>
+    <item
+        jar="E:\AndroidStudioProjects\open_weather\openweatherdemo\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        revision="23.0.1"
+        sha1="1893b8b3f52fa9611875dd255fe7a2fb3f719261">
+        <dex dex="E:\AndroidStudioProjects\open_weather\openweatherdemo\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_d56d29b682de881e069bff2c6f97e26ab473aa0b\classes.dex" />
+    </item>
+    <item
+        jar="E:\AndroidStudioProjects\open_weather\openweatherdemo\libs\Bughd_android_sdk_v1.2.6.jar"
+        jumboMode="true"
+        revision="23.0.1"
+        sha1="f8ed47b1d7a894bf88acdab91b576c0fd5d98476">
+        <dex dex="E:\AndroidStudioProjects\open_weather\openweatherdemo\build\intermediates\transforms\dex\debug\folders\1000\2\Bughd_android_sdk_v1.2.6_bf420002398058e4f83c475a03c7fa674e00d3ff\classes.dex" />
+    </item>
+    <item
+        jar="E:\AndroidStudioProjects\open_weather\openweatherdemo\libs\butterknife-5.0.0.jar"
+        jumboMode="true"
+        revision="23.0.1"
+        sha1="34f9a9915c4ac33f97a9339f4caad41cb02638d8">
+        <dex dex="E:\AndroidStudioProjects\open_weather\openweatherdemo\build\intermediates\transforms\dex\debug\folders\1000\2\butterknife-5.0.0_8b25c08cfec120f764a45c4d7ad805beb4833f24\classes.dex" />
+    </item>
+    <item
+        jar="E:\AndroidStudioProjects\open_weather\openweatherdemo\libs\locSDK_5.3.jar"
+        jumboMode="true"
+        revision="23.0.1"
+        sha1="ef5a34dcc2783dfe0fb7a7b47745d14d36b4f523">
+        <dex dex="E:\AndroidStudioProjects\open_weather\openweatherdemo\build\intermediates\transforms\dex\debug\folders\1000\2\locSDK_5.3_9d5b716b67c34ab4d65884a8b75283684701bec7\classes.dex" />
+    </item>
+    <item
+        jar="E:\AndroidStudioProjects\open_weather\openweatherdemo\libs\voicesdk.jar"
+        jumboMode="true"
+        revision="23.0.1"
+        sha1="11075ff86ec4a4874f0b58cd29a55d977eb70287">
+        <dex dex="E:\AndroidStudioProjects\open_weather\openweatherdemo\build\intermediates\transforms\dex\debug\folders\1000\2\voicesdk_6f736acac5ca0649f9d6d5b2a8cf0d44cb3e7dfa\classes.dex" />
+    </item>
+
+</items>

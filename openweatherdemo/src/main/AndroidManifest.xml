@@ -57,9 +57,6 @@
             android:exported="true" >
         </service>
         
-         <service
-            android:name="com.ximalaya.ting.android.opensdk.player.service.XmPlayerService"
-        />
 
         <provider
             android:name="com.sample.weatherdemo.db.CityProvider"
